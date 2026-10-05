@@ -19,3 +19,9 @@ def top_words(text: str, n: int = 3) -> list[tuple[str, int]]:
     for word in re.findall(r"[a-z']+", text.lower()):
         counts[word] = counts.get(word, 0) + 1
     return sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:n]
+
+
+def average_word_length(text: str) -> float:
+    """Return the mean length of the words in *text*."""
+    words = text.split()
+    return sum(len(word) for word in words) / len(words)
