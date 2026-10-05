@@ -19,3 +19,8 @@ def top_words(text: str, n: int = 3) -> list[tuple[str, int]]:
     for word in re.findall(r"[a-z']+", text.lower()):
         counts[word] = counts.get(word, 0) + 1
     return sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:n]
+
+
+def sentence_count(text: str) -> int:
+    """Count the sentences in *text*."""
+    return text.count(".")
