@@ -5,6 +5,18 @@ def test_slugify_joins_words_with_hyphens():
     assert slugify("Hello World") == "hello-world"
 
 
+def test_slugify_strips_trailing_punctuation():
+    assert slugify("Hello, World!") == "hello-world"
+
+
+def test_slugify_strips_leading_and_trailing_punctuation():
+    assert slugify("...Hello World!!!") == "hello-world"
+
+
+def test_slugify_all_punctuation_is_empty():
+    assert slugify("!!!") == ""
+
+
 def test_word_count_ignores_extra_whitespace():
     assert word_count("  one  two\nthree ") == 3
 

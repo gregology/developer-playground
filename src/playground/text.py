@@ -5,7 +5,7 @@ import re
 
 def slugify(title: str) -> str:
     """Return a lowercase, hyphen-separated slug for *title*."""
-    return re.sub(r"[^a-z0-9]+", "-", title.lower()).lstrip("-")
+    return re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
 
 
 def word_count(text: str) -> int:
