@@ -15,3 +15,12 @@ def test_top_words_orders_by_count_then_alphabetically():
 
 def test_sentence_count():
     assert sentence_count("One. Two. Three.") == 3
+
+
+def test_sentence_count_includes_exclamation_and_question_marks():
+    assert sentence_count("Stop! Go?") == 2
+    assert sentence_count("Hi. Really? Yes!") == 3
+
+
+def test_sentence_count_treats_runs_of_terminators_as_one():
+    assert sentence_count("Wait... What?!") == 2

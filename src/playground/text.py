@@ -23,4 +23,4 @@ def top_words(text: str, n: int = 3) -> list[tuple[str, int]]:
 
 def sentence_count(text: str) -> int:
     """Count the sentences in *text*."""
-    return text.count(".")
+    return len(re.findall(r"[.!?]+", text))
